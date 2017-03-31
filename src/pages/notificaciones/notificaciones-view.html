@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Ver notificacion</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <p style="font-size:15pt">{{fecha}}</p>
+            <br>
+            <p style="font-size:35pt">{{alertaEntity.HoraNotificacion}}</p>
+        </ion-card-header>
+        <ion-card-content>
+            <p style="font-size:20pt">{{alertaEntity.Titulo}}</p>
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/caballo.jpg">
+                </ion-avatar>
+                <h2>{{caballoEntity.Nombre}}</h2>
+                <p>{{grupoDescripcion}}</p>
+            </ion-item>
+            <br>
+            <p>{{alertaEntity.Descripcion}}</p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

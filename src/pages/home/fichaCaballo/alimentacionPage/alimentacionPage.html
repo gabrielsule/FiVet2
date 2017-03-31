@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{caballo.Nombre}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label floating>Detalle de Alimentación</ion-label>
+        <ion-textarea [(ngModel)]="txtAlimentacion"></ion-textarea>
+    </ion-item>
+    <button ion-button block (click)="guardar()">Guardar</button>
+</ion-content>

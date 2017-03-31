@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{caballo.Nombre}}
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="openMenu($event)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <img src="assets/img/caballo2.jpg" />
+    <!-- <p style="color: red;">Falta ajustar tamaño foto</p> -->
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="menu" color="primary">
+            <ion-segment-button value="info">
+                INFORMACIÓN
+            </ion-segment-button>
+            <ion-segment-button value="fotos">
+                FOTOS
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+    <div *ngIf="menu == 'info'">
+        <menuInfo-caballo [caballoSeleccionado]="caballo"></menuInfo-caballo>
+    </div>
+    <div *ngIf="menu == 'fotos'">
+        <menuFotos-caballo></menuFotos-caballo>
+    </div>
+</ion-content>

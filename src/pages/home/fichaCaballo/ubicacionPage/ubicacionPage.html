@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{caballo.Nombre}}
+        </ion-title>
+        <ion-buttons end *ngIf="model.Nombre != undefined || model.Nombre != ''">
+            <button ion-button icon-only (click)="openMenu($event)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Map
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>
+    </ion-buttons>  
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="model.Nombre == undefined" class="text-center">
+        <ion-label>El caballo {{caballo.Nombre}} no tiene cargada su ubicación.</ion-label>
+        <button ion-button block (click)="newUbicacion()">Cargar ubicación</button>
+    </div>
+    <div *ngIf="model.Nombre != undefined">
+        <ion-grid class="grid-padding">
+            <ion-row class="row-padding">
+                <ion-col width-100><strong>{{model.Nombre}}</strong></ion-col>
+            </ion-row>
+            <ion-row class="row-padding">
+                <ion-col width-10><ion-icon name="person"></ion-icon></ion-col>
+                <ion-col width-90>{{model.Propietario}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-grid>
+                    <ion-row *ngFor="let mail of model.Mails" class="row-padding">
+                        <ion-col width-10><ion-icon name="mail"></ion-icon></ion-col>
+                        <ion-col width-90>
+                            <ion-row>
+                                    <ion-col width-75>{{mail.MailDesc}}</ion-col>
+                                    <ion-col width-25 class="label-tipo">{{mail.Tipo.Descripcion}}</ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-row>
+            <ion-row>
+                <ion-grid>
+                    <ion-row *ngFor="let numero of model.Numeros" class="row-padding">
+                        <ion-col width-10><ion-icon name="phone-portrait"></ion-icon></ion-col>
+                        <ion-col width-90>
+                            <ion-row>
+                                    <ion-col width-75>{{numero.Numero}}</ion-col>
+                                    <ion-col width-25 class="label-tipo">{{numero.Tipo.Descripcion}}</ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-row>
+            <ion-row class="row-padding">
+                <ion-col width-10><ion-icon name="pin"></ion-icon></ion-col>
+                <ion-col width-90>{{model.DescUbicacion}}</ion-col>
+            </ion-row>
+        </ion-grid>
+        <div #map id="map"></div>
+    </div>
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      CAMARA
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+	    <ion-card-content>
+	      Probando componente de cámara
+	      <button ion-button block (click)="takePicture()">Ir a cámara</button>
+	      Última foto:
+	      <img [src]="base64Image" *ngIf="base64Image" />
+	    </ion-card-content>
+  	</ion-card>
+ </ion-content>

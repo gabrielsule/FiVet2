@@ -1,0 +1,98 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{caballo.Nombre}}
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="openMenu($event)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="grid-padding">
+
+        <!-- <ion-row class="row-padding">
+            <ion-col width-33 class="label-property">Persona a cargo</ion-col>
+            <ion-grid>
+                <ion-row>
+                    <ion-col with-67>{{caballo.PersonaACargo.Nombre}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col with-67>{{caballo.PersonaACargo.Telefono}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col with-67>{{caballo.PersonaACargo.Mail}}</ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-row> -->
+
+        <ion-row class="row-padding">
+            <ion-col width-33 class="label-property">Nombre</ion-col>
+            <ion-col width-67 class="label-property-value">{{caballo.Nombre}}</ion-col>
+        </ion-row>
+        <ion-row class="row-padding">
+            <ion-col width-33 class="label-property">Propietario</ion-col>
+            <ion-col width-67 class="label-property-link">{{getDescPropietarioCaballo()}}</ion-col>
+        </ion-row>
+        <ion-row class="row-padding">
+            <ion-col width-33 class="label-property">Genero</ion-col>
+            <ion-col width-67 class="label-property-value">{{caballo.Genero.Descripcion}}</ion-col>
+        </ion-row>
+        <ion-row class="row-padding">
+            <ion-col width-33 class="label-property">Pelaje</ion-col>
+            <ion-col width-67 class="label-property-value">{{caballo.Pelaje.Descripcion}}</ion-col>
+        </ion-row>
+        <ion-row class="row-padding">
+            <ion-col width-33 class="label-property">Nacimiento</ion-col>
+            <ion-col width-67 class="label-property-value">{{(getFechaNacCaballo() | date: 'dd/MM/yyyy') || "-"}}</ion-col>
+        </ion-row>
+        <ion-row class="row-padding">
+            <ion-col width-33 class="label-property">Genealogía</ion-col>
+            <ion-grid>
+                <ion-row>
+                    <ion-col with-33>Padre</ion-col>
+                    <ion-col with-67>{{getDescPadreCaballo()}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col with-33>Madre</ion-col>
+                    <ion-col with-67>{{getDescMadreCaballo()}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col with-100 style="font-weight: bold; color: green; font-size: 75% !important;">
+                        <ion-icon name="attach">&nbsp;Pedigree</ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-row>
+        <ion-row class="row-padding">
+            <ion-col width-33 class="label-property">ADN</ion-col>
+            <ion-col width-67 class="label-property-value">{{getDescADNCaballo()}}</ion-col>
+        </ion-row>
+        <ion-row class="row-padding">
+            <ion-col width-33 class="label-property"># Chip</ion-col>
+            <ion-col width-67 class="label-property-value">{{caballo.NumeroChip ? caballo.NumeroChip : "-"}}</ion-col>
+        </ion-row>
+        <ion-row class="row-padding">
+            <ion-col width-33 class="label-property"># ID</ion-col>
+            <ion-col width-67 class="label-property-value">{{caballo.NumeroId ? caballo.NumeroId : "-"}}</ion-col>
+        </ion-row>
+        <ion-row class="row-padding">
+            <ion-col width-33 class="label-property">Criador</ion-col>
+            <ion-col width-33 class="label-property-value">{{getNombreCriadorCaballo()}}</ion-col>
+            <ion-col width-33 class="label-property-value">{{getDescPaisCriadorCaballo()}}</ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Otras Marcas</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="image"></ion-icon>
+            <ion-icon name="attach"></ion-icon>
+        </ion-item>
+    </ion-list>
+</ion-content>

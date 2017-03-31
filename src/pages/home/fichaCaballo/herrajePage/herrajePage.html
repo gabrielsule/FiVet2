@@ -1,0 +1,89 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{caballo.Nombre}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding="true">
+    <ion-grid>
+        <ion-row>
+            <ion-col width-100 class="no-padding-bottom">
+                <b>PRÓXIMO HERRAJE / DESVASADO</b>
+            </ion-col>
+            <!-- <ion-col width-33 class="no-padding-bottom">
+                <button ion-button small color="secondary" clear>Editar</button>
+            </ion-col> -->
+        </ion-row>
+    </ion-grid>
+    <hr />
+    <ion-grid>
+        <ion-row>
+            <ion-col width-67 class="text-85 text-fecha">23 de Noviembre de 2016</ion-col>
+            <ion-col width-33>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col width-90 class="text-85">
+                            <ion-icon item-left name="notifications"></ion-icon>
+                            10:00 am
+                        </ion-col>
+                        <ion-col width-10>
+                            <ion-icon name="notifications">
+                            </ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <br>
+    <p class="no-padding-bottom"><b>HISTORIAL</b></p>
+    <hr />
+
+    <ion-list>
+        <ion-item>
+            <ion-avatar item-left>
+                <img src="assets/img/add.png">
+            </ion-avatar>
+            <b class="text-85">Nuevo registro</b>
+        </ion-item>
+        <button ion-item class="text-85" *ngIf="!flag" (click)="flag = !flag;">
+            <ion-icon name="arrow-forward" item-right hideWhen="ios"></ion-icon>
+            23/11/16&nbsp;&nbsp;&nbsp;&nbsp;Nombre del herrero
+        </button>
+        <ion-card *ngIf="flag" (click)="flag = !flag;">
+            <ion-card-header>
+                23/11/16
+                <!-- <ion-icon pull-right name="arrow-down"></ion-icon> -->
+            </ion-card-header>
+            <ion-card-content>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur ut velit eget mattis. Integer dignissim venenatis arcu, vel dignissim metus accumsan in. Duis ultrices bibendum felis sed porttitor. Vestibulum pellentesque condimentum tempor. Morbi at nisl ligula. Nullam erat nunc, blandit eget dolor eget, posuere tincidunt ante.
+            </ion-card-content>
+        </ion-card>
+        <button ion-item class="text-85" *ngIf="!flag2" (click)="flag2 = !flag2;">
+            <ion-icon name="arrow-forward" item-right hideWhen="ios"></ion-icon>
+            05/05/16&nbsp;&nbsp;&nbsp;&nbsp;Nombre del herrero
+        </button>
+        <ion-card *ngIf="flag2" (click)="flag2 = !flag2;">
+            <ion-card-header>
+                05/05/16
+            </ion-card-header>
+            <ion-card-content>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur ut velit eget mattis. Integer dignissim venenatis arcu, vel dignissim metus accumsan in. Duis ultrices bibendum felis sed porttitor. Vestibulum pellentesque condimentum tempor. Morbi at nisl ligula. Nullam erat nunc, blandit eget dolor eget, posuere tincidunt ante.
+            </ion-card-content>
+        </ion-card>
+        <button ion-item class="text-85" *ngIf="!flag3" (click)="flag3 = !flag3;">
+            <ion-icon name="arrow-forward" item-right hideWhen="ios"></ion-icon>
+            17/07/16&nbsp;&nbsp;&nbsp;&nbsp;Nombre del herrero
+        </button>
+        <ion-card *ngIf="flag3" (click)="flag3 = !flag3;">
+            <ion-card-header>
+                17/07/16
+            </ion-card-header>
+            <ion-card-content>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur ut velit eget mattis. Integer dignissim venenatis arcu, vel dignissim metus accumsan in. Duis ultrices bibendum felis sed porttitor. Vestibulum pellentesque condimentum tempor. Morbi at nisl ligula. Nullam erat nunc, blandit eget dolor eget, posuere tincidunt ante.
+            </ion-card-content>
+        </ion-card>
+</ion-list>
+</ion-content>

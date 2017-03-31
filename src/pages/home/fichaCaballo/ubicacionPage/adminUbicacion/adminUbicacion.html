@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title *ngIf="!isUpdate">
+            Agregar ubicación
+        </ion-title>
+        <ion-title *ngIf="isUpdate">
+            Editar ubicación
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item class="property-value">
+            <ion-icon name="home" item-left></ion-icon>
+            <ion-input type="text" [(ngModel)]="establecimiento.Nombre"></ion-input>
+        </ion-item>
+        <ion-item class="property-value">
+            <ion-icon name="person" item-left></ion-icon>
+            <ion-input type="text" [(ngModel)]="establecimiento.Propietario"></ion-input>
+        </ion-item>
+        <ion-item *ngFor="let mail of listadoMailsAux; let isFirst = first; let isLast = last" class="property-value">
+            <ion-icon name="mail" item-left *ngIf="isFirst"></ion-icon>
+            <ion-input type="mail" [(ngModel)]="mail.MailDesc"></ion-input>
+            <button ion-button icon-only clear item-right (click)="agregarMail()" *ngIf="isFirst">
+                <ion-icon name="add-circle"></ion-icon>
+            </button>
+            <button ion-button icon-only clear item-right (click)="eliminarMail()" *ngIf="!isFirst && isLast">
+                <ion-icon name="remove-circle"></ion-icon>
+            </button>
+        </ion-item>
+        <ion-item *ngFor="let numero of listadoNumerosTelefonoAux; let isFirst = first; let isLast = last" class="property-value">
+            <ion-icon name="phone-portrait" item-left *ngIf="isFirst"></ion-icon>
+            <ion-input type="tel" [(ngModel)]="numero.Numero"></ion-input>
+            <button ion-button icon-only clear item-right (click)="agregarNumero()" *ngIf="isFirst">
+                <ion-icon name="add-circle"></ion-icon>
+            </button>
+            <button ion-button icon-only clear item-right (click)="eliminarNumero()" *ngIf="!isFirst && isLast">
+                <ion-icon name="remove-circle"></ion-icon>
+            </button>
+        </ion-item>
+        <ion-item class="property-value">
+            <ion-icon name="pin" item-left></ion-icon>
+            <ion-input type="text" [(ngModel)]="establecimiento.DescUbicacion"></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button block [disabled]="inSubmit" (click)="guardarEstablecimiento()">Guardar</button>
+</ion-content>

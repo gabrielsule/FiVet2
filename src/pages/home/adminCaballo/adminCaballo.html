@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title *ngIf="!isUpdate">
+            Agregar caballo
+        </ion-title>
+        <ion-title *ngIf="isUpdate">
+            Editar caballo
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="caballoForm" (ngSubmit)="guardarCaballo()">
+        <!-- <ion-item>
+            <ion-label fixed>Persona a cargo</ion-label>
+            <ion-input type="text" formControlName="NombrePer" placeholder="Nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed></ion-label>
+            <ion-input type="text" formControlName="Telefono" placeholder="Teléfono"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed></ion-label>
+            <ion-input type="text" formControlName="Email" placeholder="Email"></ion-input>
+        </ion-item> -->
+        <ion-item>
+            <ion-label>Nombre</ion-label>
+            <ion-input type="text" formControlName="Nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Género</ion-label>
+            <ion-select formControlName="Genero">
+                <ion-option *ngFor="let gen of generos" [value]="gen.ID">{{gen.Descripcion}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Pelaje</ion-label>
+            <ion-select formControlName="Pelaje">
+                <ion-option *ngFor="let pel of pelajes" [value]="pel.ID">{{pel.Descripcion}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Nacimiento</ion-label>
+            <ion-datetime displayFormat="D/M/YYYY" pickerFormat="D MMMM YYYY" cancelText="Cancelar" doneText="Aceptar" formControlName="FechaNacimiento"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Pedigree</ion-label>
+            <ion-input type="text" formControlName="Padre" placeholder="Padre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed></ion-label>
+            <ion-input type="text" formControlName="Madre" placeholder="Madre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>ADN</ion-label>
+            <ion-toggle formControlName="ADN"></ion-toggle>
+        </ion-item>
+        <ion-item>
+            <ion-label># Chip</ion-label>
+            <ion-input type="text" formControlName="NumeroChip"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label># ID</ion-label>
+            <ion-input type="text" formControlName="NumeroId"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Criador</ion-label>
+            <ion-select formControlName="Criador">
+                <ion-option *ngFor="let cri of criadores" [value]="cri.ID">{{cri.Nombre}} - {{cri.Pais.Descripcion}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-input type="file"></ion-input>
+        </ion-item>
+
+        <button ion-button block type="submit" [disabled]="!caballoForm.valid">Guardar</button>
+    </form>
+</ion-content>

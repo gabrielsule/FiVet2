@@ -1,0 +1,121 @@
+<!-- Id de caballo: {{caballo.ID}} -->
+
+<ion-grid>
+    <ion-row>
+        <ion-col width-33>
+        <button ion-button style="width:100%" (click)="GoToDatos()">
+            <div>
+            <ion-icon name='albums'></ion-icon>
+            <br>
+            <label>Datos</label>
+            </div>
+        </button>
+        </ion-col>
+        <ion-col width-33>
+        <button ion-button style="width:100%" (click)="GoToUbicacion()">
+            <div>
+            <ion-icon name='pin'></ion-icon>
+            <br>
+            <label>Ubicación</label>
+            </div>
+        </button>
+        </ion-col>
+        <ion-col width-33>
+        <button ion-button style="width:100%">
+            <div>
+            <ion-icon name='medkit'></ion-icon>
+            <br>
+            <label>Veterinario</label>
+            </div>
+        </button>
+        </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+        <ion-col width-33>
+        <button ion-button style="width:100%">
+            <div>
+            <ion-icon name='trophy'></ion-icon>
+            <br>
+            <label>Eventos</label>
+            </div>
+        </button>
+        </ion-col>
+        <ion-col width-33>
+        <button ion-button style="width:100%" (click)="GoToHerraje()">
+            <div>
+            <ion-icon name='paw'></ion-icon>
+            <br>
+            <label>Herrajes</label>
+            </div>
+        </button>
+        </ion-col>
+        <ion-col width-33>
+        <button ion-button style="width:100%" (click)="GoToAlimentacion()">
+            <div>
+            <ion-icon name='nutrition'></ion-icon>
+            <br>
+            <label>Alimentación</label>
+            </div>
+        </button>
+        </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+        <ion-col width-33>
+        <button ion-button style="width:100%">
+            <div>
+            <ion-icon name='medical'></ion-icon>
+            <br>
+            <label>Dentista</label>
+            </div>
+        </button>
+        </ion-col>
+        <ion-col width-33>
+        <button ion-button style="width:100%">
+            <div>
+            <ion-icon name='nuclear'></ion-icon>
+            <br>
+            <label style="font-size: 12px">Desparasitaciones</label>
+            </div>
+        </button>
+        </ion-col>
+        <ion-col width-33>
+        <button ion-button style="width:100%" (click)="GoToNotas()">
+            <div>
+            <ion-icon name='paper'></ion-icon>
+            <br>
+            <label>Notas varias</label>
+            </div>
+        </button>
+        </ion-col>
+    </ion-row>
+    <!--<ion-row> 
+        <ion-col width-33>
+        <button ion-button style="width:100%">
+            <div>
+            <ion-icon name='images'></ion-icon>
+            <br>
+            <label>Fotos</label>
+            </div>
+        </button>
+        </ion-col>
+    </ion-row> -->
+</ion-grid>
+
+<!--
+ Id de caballo: {{caballo.ID}} 
+<button ion-button block outline (click)="GoToDatos()">Datos</button>
+<button ion-button block outline (click)="GoToUbicacion()">Ubicación</button>
+<button ion-button block outline>Veterinario</button>
+<button ion-button block outline>Eventos</button>
+<button ion-button block outline>Herraje</button>
+<button ion-button block outline (click)="GoToAlimentacion()">Alimentación</button>
+<button ion-button block outline>Dentista</button>
+<button ion-button block outline>Desparasitaciones</button>
+<button ion-button block outline>Notas varias</button>
+<button ion-button block outline>Fotos</button>
+
+-->
